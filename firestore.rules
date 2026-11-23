@@ -1,0 +1,13 @@
+rules_version = '2';
+
+// PantryPilot — Firestore rules.
+// Every user is anonymous (see src/ai.ts `ensureAnonymousUser`) and may only
+// read/write their own documents under users/{uid}/... Nothing else is
+// readable or writable. Rules are deployed with `firebase deploy --only firestore:rules`.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
