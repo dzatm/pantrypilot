@@ -15,7 +15,7 @@ import { getAuth, signInAnonymously, type Auth } from "firebase/auth";
 import { getFirestore, type Firestore } from "firebase/firestore";
 import {
   CustomProvider,
-  ReCaptchaV3Provider,
+  ReCaptchaEnterpriseProvider,
   initializeAppCheck,
 } from "firebase/app-check";
 import {
@@ -76,7 +76,7 @@ export function initFirebase(): void {
     (self as unknown as Record<string, unknown>).FIREBASE_APPCHECK_DEBUG_TOKEN = true;
   }
   if (appCheckSiteKey) {
-    initializeAppCheck(app, { provider: new ReCaptchaV3Provider(appCheckSiteKey) });
+    initializeAppCheck(app, { provider: new ReCaptchaEnterpriseProvider(appCheckSiteKey) });
   } else {
     // No reCAPTCHA key configured. In dev this runs on the debug provider
     // above; in production the provider throws a clear error instead of
