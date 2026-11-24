@@ -25,12 +25,13 @@
 // a project. The mock is never used once a real config is pasted in.
 
 export const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY_HERE",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "PASTE_YOUR_SENDER_ID_HERE",
-  appId: "PASTE_YOUR_APP_ID_HERE",
+  apiKey: "AIzaSyDMHFQwHyZ0c6_vTLBO4VjiOCfXkvrG3nA",
+  authDomain: "pantrypilot-93325.firebaseapp.com",
+  projectId: "pantrypilot-93325",
+  storageBucket: "pantrypilot-93325.firebasestorage.app",
+  messagingSenderId: "247515349688",
+  appId: "1:247515349688:web:275ac9ad57505c42c72a4d",
+  measurementId: "G-CCWCQ8HBME",
 } as const;
 
 /** Optional: reCAPTCHA v3 site key for App Check in production. Leave empty for local dev. */
@@ -38,6 +39,6 @@ export const appCheckSiteKey = "";
 
 /** True once a real Firebase config has been pasted into this file. */
 export const isFirebaseConfigured: boolean =
-  firebaseConfig.apiKey !== "PASTE_YOUR_API_KEY_HERE" &&
-  firebaseConfig.projectId !== "YOUR_PROJECT_ID" &&
-  firebaseConfig.appId !== "PASTE_YOUR_APP_ID_HERE";
+  (firebaseConfig.apiKey as string) !== "PASTE_YOUR_API_KEY_HERE" &&
+  (firebaseConfig.projectId as string) !== "YOUR_PROJECT_ID" &&
+  (firebaseConfig.appId as string) !== "PASTE_YOUR_APP_ID_HERE";
