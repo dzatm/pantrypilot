@@ -139,7 +139,7 @@ function photoSection(): string {
       <div class="photo-row">
         <label class="btn btn-primary file-btn">
           📷 Choose a photo
-          <input id="photo-input" type="file" accept="image/*" capture="environment" hidden />
+          <input id="photo-input" type="file" accept="image/*" hidden />
         </label>
         ${p ? `<button type="button" class="btn btn-ghost" data-action="clear-photo">Remove photo</button>` : ""}
       </div>
