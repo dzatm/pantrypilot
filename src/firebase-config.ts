@@ -15,9 +15,10 @@
 //      PASTE_YOUR_* / YOUR_PROJECT_ID value below. Do NOT commit real secrets
 //      to a public repo beyond this client config (it is meant to be public;
 //      App Check is what protects the Gemini API).
-//   4. If you use reCAPTCHA v3 for App Check in production, paste its site
-//      key into `appCheckSiteKey`. For local dev the app uses the App Check
-//      debug provider instead (see src/ai.ts) — no site key needed.
+//   4. If you use reCAPTCHA Enterprise for App Check in production, paste its
+//      site key into `appCheckSiteKey` (registered in Console > App Check >
+//      Fraud Defense). For local dev the app uses the App Check debug provider
+//      instead (see src/ai.ts) — no site key needed.
 //
 // While the placeholders are in place, `isFirebaseConfigured` is false and
 // the app runs in clearly-marked DEMO mode: the full UI works end-to-end
@@ -34,8 +35,8 @@ export const firebaseConfig = {
   measurementId: "G-CCWCQ8HBME",
 } as const;
 
-/** Optional: reCAPTCHA v3 site key for App Check in production. Leave empty for local dev. */
-export const appCheckSiteKey = "";
+/** reCAPTCHA Enterprise site key for App Check in production (Fraud Defense). Leave empty for local dev. */
+export const appCheckSiteKey = "6LcddS8uAAAAANK_blKi4bdB57NJCSXP2FGEwSPw";
 
 /** True once a real Firebase config has been pasted into this file. */
 export const isFirebaseConfigured: boolean =
